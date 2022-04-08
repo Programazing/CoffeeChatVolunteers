@@ -1,15 +1,13 @@
 let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/dev/volunteers.csv'
-let loadCSV = () => {
-    Papa.parse(csvURL, {
-        download: true,
-        quotes: false,
-        delimiter: ",",
-        header: true,
-        complete: function(results) {
-            generateVolunteerCard(results)
-        }
-    })
-}
+let loadCSV = Papa.parse(csvURL, {
+    download: true,
+    quotes: false,
+    delimiter: ",",
+    header: true,
+    complete: function(results) {
+        generateVolunteerCard(results)
+    }
+})
 
 function generateVolunteerCard(results) {
     for(item of results.data){
