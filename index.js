@@ -4,11 +4,6 @@ papaParse.setAttribute('crossorigin','anonymous')
 papaParse.setAttribute('referrerpolicy','no-referrer')
 document.head.appendChild(papaParse)
 
-var css = document.createElement('link')
-css.setAttribute('rel','stylesheet')
-css.href = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/main/index.css'
-document.head.appendChild(css);
-
 window.onload = () => {
     let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/main/volunteers.csv'
     Papa.parse(csvURL, {
