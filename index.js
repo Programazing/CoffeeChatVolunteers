@@ -12,27 +12,27 @@ let loadCSV = window.onload = (event) => {
 }
 
 function generateVolunteerCard(results) {
-
-    const container = document.createElement('div')
-    container.setAttribute('class', 'container')
-    document.body.append(container);
-
     for(item of results.data){
         const card = document.createElement('div')
         card.setAttribute('class', 'card')
+        document.body.append(card);
 
         const a = document.createElement('a')
         a.href = item.link
 
         const img = document.createElement('img')
+        img.setAttribute('alt', 'Avatar');
         img.src = item.image
 
-        const name = item.name
+        const container = document.createElement('div')
+        container.setAttribute('class', 'container')
+
+        const name = document.createElement('h4')
+        name.append(item.name)
 
         a.append(img)
-        a.append(name)
+        container.append(name)
+        a.append(container)
         card.appendChild(a)
-
-        container.appendChild(card)
     }  
 }
