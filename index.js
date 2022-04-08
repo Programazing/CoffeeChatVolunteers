@@ -1,4 +1,4 @@
-let csvURL = "https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/dev/volunteers.csv";
+let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/dev/volunteers.csv'
 let loadCSV = window.onload = (event) => {
     Papa.parse(csvURL, {
         download: true,
@@ -6,7 +6,7 @@ let loadCSV = window.onload = (event) => {
         delimiter: ",",
         header: true,
         complete: function(results) {
-            generateVolunteerCard(results);
+            generateVolunteerCard(results)
         }
     })
 }
@@ -15,13 +15,14 @@ function generateVolunteerCard(results) {
     for(item of results.data){
         const card = document.createElement('div')
         card.setAttribute('class', 'card')
-        document.body.append(card);
+        document.body.append(card)
 
         const a = document.createElement('a')
+        a.setAttribute('target', '_blank')
         a.href = item.link
 
         const img = document.createElement('img')
-        img.setAttribute('alt', 'Avatar');
+        img.setAttribute('alt', 'Avatar')
         img.src = item.image
 
         const container = document.createElement('div')
