@@ -5,7 +5,7 @@ papaParse.setAttribute('referrerpolicy','no-referrer')
 document.head.appendChild(papaParse)
 
 window.onload = () => {
-    let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/volunteers.csv'
+    let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/main/volunteers.csv'
     Papa.parse(csvURL, {
         download: true,
         quotes: false,
