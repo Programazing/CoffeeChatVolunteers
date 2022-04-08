@@ -6,11 +6,11 @@ document.head.appendChild(papaParse)
 
 var css = document.createElement('link')
 css.setAttribute('rel','stylesheet')
-css.href = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/index.css'
+css.href = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/main/index.css'
 document.head.appendChild(css);
 
 window.onload = () => {
-    let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/volunteers.csv'
+    let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/main/volunteers.csv'
     Papa.parse(csvURL, {
         download: true,
         quotes: false,
