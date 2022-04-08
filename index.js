@@ -1,5 +1,5 @@
 let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/dev/volunteers.csv'
-let loadCSV = window.onload = (event) => {
+let loadCSV = () => {
     Papa.parse(csvURL, {
         download: true,
         quotes: false,
