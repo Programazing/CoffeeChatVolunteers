@@ -1,4 +1,4 @@
-const env = 'dev'
+const env = 'main'
 const papaVersion = '5.3.2'
 
 var papaParse = document.createElement('script')
