@@ -21,6 +21,8 @@ window.onload = () => {
 
     function generateVolunteerCard(results) {
         for(item of results.data){
+            if (itemHasValue(item) == false) {break}
+            
             const card = document.createElement('div')
             card.setAttribute('class', 'card')
             document.body.append(card)
@@ -44,5 +46,12 @@ window.onload = () => {
             a.append(container)
             card.appendChild(a)
         }  
-    } 
+    }
+
+    function itemHasValue(item){
+        if(item.name == undefined){return false}
+        if(item.link == undefined){return false}
+        if(item.image == undefined){return false}
+        return true
+    }
 }
