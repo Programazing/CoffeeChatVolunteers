@@ -1,11 +1,14 @@
+const env = 'main'
+const papaVersion = '5.3.2'
+
 var papaParse = document.createElement('script')
-papaParse.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.js')
+papaParse.setAttribute('src',`https://cdnjs.cloudflare.com/ajax/libs/PapaParse/${papaVersion}/papaparse.js`)
 papaParse.setAttribute('crossorigin','anonymous')
 papaParse.setAttribute('referrerpolicy','no-referrer')
 document.head.appendChild(papaParse)
 
 window.onload = () => {
-    let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/main/volunteers.csv'
+    let csvURL = `https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/${env}/volunteers.csv`
     Papa.parse(csvURL, {
         download: true,
         quotes: false,
