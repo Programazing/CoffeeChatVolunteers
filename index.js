@@ -1,4 +1,4 @@
-const branchName = 'dev'
+const branchName = 'main'
 const papaVersion = '5.3.2'
 const githubUsername = 'Programazing'
 const githubProjectName = 'CoffeeChatVolunteers'
