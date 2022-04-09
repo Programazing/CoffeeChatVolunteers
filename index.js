@@ -1,11 +1,14 @@
+const env = 'main'
+const papaVersion = '5.3.2'
+
 var papaParse = document.createElement('script')
-papaParse.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.js')
+papaParse.setAttribute('src',`https://cdnjs.cloudflare.com/ajax/libs/PapaParse/${papaVersion}/papaparse.js`)
 papaParse.setAttribute('crossorigin','anonymous')
 papaParse.setAttribute('referrerpolicy','no-referrer')
 document.head.appendChild(papaParse)
 
 window.onload = () => {
-    let csvURL = 'https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/main/volunteers.csv'
+    let csvURL = `https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/${env}/volunteers.csv`
     Papa.parse(csvURL, {
         download: true,
         quotes: false,
@@ -18,6 +21,8 @@ window.onload = () => {
 
     function generateVolunteerCard(results) {
         for(item of results.data){
+            if (itemHasValue(item) == false) {break}
+            
             const card = document.createElement('div')
             card.setAttribute('class', 'card')
             document.body.append(card)
@@ -41,5 +46,12 @@ window.onload = () => {
             a.append(container)
             card.appendChild(a)
         }  
-    } 
+    }
+
+    function itemHasValue(item){
+        if(item.name == undefined){return false}
+        if(item.link == undefined){return false}
+        if(item.image == undefined){return false}
+        return true
+    }
 }
