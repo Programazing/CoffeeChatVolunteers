@@ -1,5 +1,8 @@
-const env = 'main'
+const branchName = 'main'
 const papaVersion = '5.3.2'
+const githubUsername = 'Programazing'
+const githubProjectName = 'CoffeeChatVolunteers'
+const csvName = 'volunteers.csv'
 
 var papaParse = document.createElement('script')
 papaParse.setAttribute('src',`https://cdnjs.cloudflare.com/ajax/libs/PapaParse/${papaVersion}/papaparse.js`)
@@ -8,7 +11,7 @@ papaParse.setAttribute('referrerpolicy','no-referrer')
 document.head.appendChild(papaParse)
 
 window.onload = () => {
-    let csvURL = `https://raw.githubusercontent.com/Programazing/CoffeeChatVolunteers/${env}/volunteers.csv`
+    let csvURL = `https://raw.githubusercontent.com/${githubUsername}/${githubProjectName}/${branchName}/${csvName}`
     Papa.parse(csvURL, {
         download: true,
         quotes: false,
